@@ -1,4 +1,6 @@
-package florist;
+package florist.Controller;
+import florist.flowers.Flowers;
+
 import java.util.*;
 
 public class BouquetCollector {

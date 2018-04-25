@@ -1,4 +1,6 @@
-package florist;
+package florist.flowers;
+
+import florist.FreshFlowers;
 
 public abstract class Flowers{
     private final String name;

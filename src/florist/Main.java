@@ -1,5 +1,10 @@
 package florist;
 
+import florist.Controller.BouquetCollector;
+import florist.flowers.Rose;
+import florist.flowers.Tulip;
+import florist.flowers.Violet;
+
 public class Main {
     public static void main(String[] args) {
         BouquetCollector bouquetCollector=new BouquetCollector();
