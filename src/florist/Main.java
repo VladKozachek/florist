@@ -18,9 +18,10 @@ public class Main {
         bouquetCollector.creationBouquet(violet3);
         bouquetCollector.creationBouquet(rose3);
         bouquetCollector.costCalculation();
+        bouquetCollector.showBouquet();
         bouquetCollector.sortFlowers();
         System.out.println("_____");
-        bouquetCollector.costCalculation();
+        bouquetCollector.showBouquet();
         bouquetCollector.searchFlower();
 
     }
