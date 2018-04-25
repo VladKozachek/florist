@@ -1,10 +1,11 @@
 package florist;
 
-public abstract class Flowers {
+public abstract class Flowers{
     private final String name;
     private final double price;
     private final FreshFlowers freshFlowers;
     private final double lengthOfStem;
+
 
 
     protected Flowers(String name, double price, FreshFlowers freshFlowers, double lengthOfStem) {

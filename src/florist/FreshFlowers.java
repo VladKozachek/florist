@@ -1,8 +1,5 @@
 package florist;
 
-
-import java.util.List;
-
-public enum FreshFlowers implements List<T> {
+public enum FreshFlowers {
     FRESH, MEDIUM, OLD
 }
