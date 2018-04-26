@@ -1,6 +1,6 @@
-package florist.flowers;
+package florist.model.flowers;
 
-import florist.FreshFlowers;
+
 
 public abstract class Flowers{
     private final String name;
@@ -8,13 +8,12 @@ public abstract class Flowers{
     private final FreshFlowers freshFlowers;
     private final double lengthOfStem;
 
-
-
     protected Flowers(String name, double price, FreshFlowers freshFlowers, double lengthOfStem) {
         this.name = name;
         this.price = price;
         this.freshFlowers=freshFlowers;
         this.lengthOfStem = lengthOfStem;
+
     }
     public String getName(){
         return name;
