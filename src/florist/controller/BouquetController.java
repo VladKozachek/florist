@@ -6,8 +6,8 @@ import java.util.*;
 
 public class BouquetController {
 
-    private ArrayList<Flowers>bouquetList =new ArrayList<>();
-    private ArrayList<Accessories>accessoriesList =new ArrayList<>();
+    ArrayList<Flowers>bouquetList =new ArrayList<>();
+    ArrayList<Accessories>accessoriesList =new ArrayList<>();
     private double summFlowers =0;
     private double summAcceroriess =0;
 
