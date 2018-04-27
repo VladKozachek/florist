@@ -1,8 +1,7 @@
 package florist.model.flowers;
 
 
-
-public abstract class Flowers{
+public abstract class Flowers {
     private final String name;
     private final double price;
     private final FreshFlowers freshFlowers;
@@ -11,11 +10,12 @@ public abstract class Flowers{
     protected Flowers(String name, double price, FreshFlowers freshFlowers, double lengthOfStem) {
         this.name = name;
         this.price = price;
-        this.freshFlowers=freshFlowers;
+        this.freshFlowers = freshFlowers;
         this.lengthOfStem = lengthOfStem;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
@@ -26,7 +26,8 @@ public abstract class Flowers{
     public FreshFlowers getFreshFlowers() {
         return freshFlowers;
     }
-    public double getLengthOfStem(){
+
+    public double getLengthOfStem() {
         return lengthOfStem;
     }
 }
