@@ -6,10 +6,13 @@ import java.util.*;
 
 public class BouquetController {
 
+    double price;
     ArrayList<Flowers>bouquetList =new ArrayList<>();
     ArrayList<Accessories>accessoriesList =new ArrayList<>();
     private double summFlowers =0;
     private double summAcceroriess =0;
+    private int lenghtA;
+    private int lenghtB;
 
     public void addFlowers(Flowers flowers){    //добавляем цветы в букет
         bouquetList.add(flowers);
@@ -25,6 +28,7 @@ public class BouquetController {
         for (Accessories item:accessoriesList){
             summAcceroriess = summAcceroriess +item.getPrice();
         }
+        price =summFlowers+summAcceroriess;
     }
     public void showBouquet(){
         System.out.println("Букет из :");
@@ -39,7 +43,8 @@ public class BouquetController {
             System.out.println("        Цвет аксессуара :    "+item.getColor());
             System.out.println("        Цена   :"+item.getPrice());
         }
-        System.out.println("Cумма букета - "+ summFlowers+summAcceroriess);
+        System.out.println("Цена за букет : "+ price);
+
         System.out.println("_________________________________________________");
     }
     public void sortFlowers () {  //сортируем цветы в букете по свежести
@@ -53,31 +58,44 @@ public class BouquetController {
             showBouquet();
         }
 
-        public void  searchFlower(){ //ищем цветок соответствующий заданному диапазону длин стеблей
-          int count=0;
-            System.out.println("Введите диапазон длины стебля : ");
-            Scanner sc=new Scanner(System.in);
-            System.out.println("от - ");
-            int lenghtA=sc.nextInt();
-            System.out.println("до - ");
-            int lenghtB=sc.nextInt();
-            if (lenghtB<lenghtA){
-                System.out.println("Ошибка ввода диапазона!!!");
-            }
-            ArrayList<Integer>tempList=new ArrayList<>();
-            for(int i=lenghtA;i<lenghtB;i++){     //записываем диапазон в лист
-                tempList.add(i);
-            }
-           for (Flowers item:bouquetList){   //проходим по листу с цветами
-             for (int j:tempList){     //проходим по диапазону
-                if(item.getLengthOfStem()==j){   //проверяем есть ли в диапазоне нужная длина, если есть выводим имя
-                    System.out.println(item.getName()+" - длина стебля "+item.getLengthOfStem());
-                    count++; //записываем сколько совпадений, если 0, то дальше выводим, что размера нет
+        public void   searchFlower(){ //ищем цветок соответствующий заданному диапазону длин стеблей
+               int count=0;
+               keyboardInput();
+
+               ArrayList<Integer>tempList=new ArrayList<>();
+               for(int i=lenghtA;i<lenghtB;i++){     //записываем диапазон в лист
+                   tempList.add(i);
+               }
+               for (Flowers item:bouquetList){   //проходим по листу с цветами
+                   for (int j:tempList){     //проходим по диапазону
+                       if(item.getLengthOfStem()==j){   //проверяем есть ли в диапазоне нужная длина, если есть выводим имя
+                           System.out.println(item.getName()+" - длина стебля "+item.getLengthOfStem());
+                           count++; //записываем сколько совпадений, если 0, то дальше выводим, что размера нет
+                       }
+                   }
+               }
+               if(count==0){
+                   System.out.println("Совпадений нет!");
+               }
+           
+        }
+        public void keyboardInput(){
+            try {
+                System.out.println("Введите диапазон длины стебля : ");
+                Scanner sc=new Scanner(System.in);
+                System.out.println("от - ");
+                this.lenghtA=sc.nextInt();
+                System.out.println("до - ");
+                this.lenghtB=sc.nextInt();
+                if(lenghtA<0||lenghtB<0){
+                    System.out.println("Длина не может быть меньше нуля");
                 }
-             }
-           }
-            if(count==0){
-                System.out.println("Указыного размера нет!");
+                else if (lenghtB<lenghtA){
+                    System.out.println("Ошибка ввода диапазона!!!");
+                }
+            } 
+            catch (InputMismatchException e){
+                System.out.println("Не правильный ввод!!!!");
             }
         }
 

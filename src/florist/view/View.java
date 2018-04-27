@@ -31,10 +31,11 @@ public class View {
         bouquetController.addAccessories(tape);
         bouquetController.addAccessories(ttwine);
 
-        bouquetController.costCalculation();  //считаем стоимость букета
         bouquetController.showBouquet();   // выводим собранный букет
+        bouquetController.costCalculation();
         bouquetController.sortFlowers();  //сортируем букет по свежести
         bouquetController.searchFlower(); // Ищем цветы по  указаному диапазону длин
+
 
     }
 }
